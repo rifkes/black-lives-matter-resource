@@ -25,12 +25,15 @@
   </head>
   <body>
 
-    <div class="black-lives-matter__wrapper"></div>
+    <div class="black-lives-matter__wrapper full-height">
+      <div class="black-lives-matter">
+      </div>
+    </div>
 
-    <div class="content__wrapper">
+    <div class="content__wrapper full-height">
       <div class="content__inner">
         <p class="intro baskerville">
-          We ask you to join us in the ongoing fight against racial injustice and inequality by speaking up and taking action
+          We ask you to join us in the ongoing fight against racial injustice and inequality by speaking up and taking action. Below are some links to resources put together by a number of different people.
         </p>
         <div class="content__middle-section">
           <p class="intro baskerville">
@@ -38,28 +41,74 @@
           </p>
           <ol class="list--action-points cormorant">
             <li class="action-point">
-              <a class="action-point__link" href="#">Donate</a>
+              <a target="_blank" class="action-point__link" href="https://blacklivesmatters.carrd.co/#donate">Donate</a>
             </li>
             <li class="action-point">
-              <a class="action-point__link" href="#">Petition</a>
+              <a target="_blank" class="action-point__link" href="https://blacklivesmatters.carrd.co/#petitions">Petition</a>
             </li>
             <li class="action-point">
-              <a class="action-point__link" href="#">Educate</a>
+              <a target="_blank" class="action-point__link" href="https://blacklivesmatters.carrd.co/#educate">Educate</a>
             </li>
             <li class="action-point">
-              <a class="action-point__link" href="#">Embed*</a>
+              <a target="_blank" class="action-point__link" href="https://jxn.co/blm">Write</a>
+            </li>
+            <li class="action-point">
+              <span class="action-point__link embed__button" href="#">Embed*</span>
+            </li>
+            <li class="action-point">
+              <a target="_blank" class="action-point__link" href="https://pfw.guide/">More</a>
             </li>
           </ol>
         </div>
         <p class="footnote baskerville">* This landing page is open-source and can be easily embedded/added to your own website</p>
       </div>
     </div>
+
+    <div class="embed-overlay full-height">
+
+      <button class="embed-overlay__close-button">
+        <div class="embed-overlay__close-button__inner embed-overlay__close-button__inner--1"></div>
+        <div class="embed-overlay__close-button__inner embed-overlay__close-button__inner--2"></div>
+      </button>
+
+    </div>
   
   <script type="text/javascript">
-   function autorun()
-   {
-    
-   }
+
+    const deactivateEmbedOverlay = () => {
+      document.body.classList.remove('embed-overlay-is-active');
+    }
+
+    const activateEmbedOverlay = () => {
+      document.body.classList.add('embed-overlay-is-active');
+    }
+
+    const setupEmbed = () => {
+      const embedButton = document.querySelector('.embed__button');
+      if (embedButton) {
+        embedButton.addEventListener('click',activateEmbedOverlay);
+      }
+      const embedCloseButton = document.querySelector('.embed-overlay__close-button');
+      if (embedCloseButton) {
+        embedCloseButton.addEventListener('click',deactivateEmbedOverlay);
+      }
+    }
+
+    const setFullHeight = () => {
+      const fullHeightElements = document.querySelectorAll('.full-height');
+      if (fullHeightElements[0]) {
+        for (let fullHeightElement of fullHeightElements) {
+          fullHeightElement.style.height = window.innerHeight + 'px';
+        }
+      }
+    }
+
+    const autorun = () => {
+      setupEmbed();
+      setFullHeight();
+      window.addEventListener('resize',setFullHeight);
+    }
+
    if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
    else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
    else window.onload = autorun;
