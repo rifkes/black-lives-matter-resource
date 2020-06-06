@@ -15,6 +15,10 @@ html, body {
 	display: none;
 }
 
+*::-webkit-scrollbar {
+	display: none;
+}
+
 @media(min-width: 499px) {
 	html, body {
 		font-size: 2.5vmin;
@@ -36,7 +40,6 @@ p {
 }
 
 .cormorant {
-	font-family: 'Cormorant Garamond', serif;
 	font-family: 'Cormorant Upright', serif;
 }
 
@@ -89,6 +92,10 @@ p {
 	height: 100%;
 }
 
+.intro {
+	margin-top: 50px;
+}
+
 .list--action-points {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -138,6 +145,7 @@ p {
 	}
 	.content__wrapper {
 		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 	.content__inner {
 		height: auto;
@@ -148,13 +156,17 @@ p {
 }
 
 .embed-overlay {
-	display: none;
+	/*display: none;*/
 	position: fixed;
 	background-color: #404040;
 	width: 100vw;
 	height: 100vh;
 	top: 0;
 	left: 0;
+	padding: 12px;
+  padding-top: 80px;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 
 .embed-overlay-is-active .embed-overlay {
@@ -184,4 +196,24 @@ p {
 .embed-overlay__close-button__inner--2 {
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+}
+
+.embed-text__wrapper {
+	border: 1px solid #ccc;
+	background-color: #eee;
+	padding: 12px;
+	border-radius: 6px;
+	color: #000;
+	max-height: 300px;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.embed-text__wrapper * {
+	color: #000;
+}
+
+.embed-text__wrapper code::selection,
+.embed-text__wrapper code *::selection {
+	background-color: #ccc;
 }
