@@ -177,7 +177,7 @@ p {
 	top: 0;
 	left: 0;
 	padding: 12px;
-  padding-top: 80px;
+  padding-top: 0;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 }
@@ -216,6 +216,7 @@ p {
 
 .embed__row {
 	margin-bottom: 12px;
+	width: calc(100vw - 60px);
 }
 
 .embed-text__wrapper {
@@ -224,7 +225,7 @@ p {
 	padding: 12px;
 	border-radius: 6px;
 	color: #000;
-	max-height: 300px;
+	max-height: 120px;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 }
