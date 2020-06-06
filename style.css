@@ -11,6 +11,19 @@ html, body {
 	overflow: hidden;
 }
 
+.background {
+	opacity: 0.2;
+	pointer-events: none;
+	z-index: 9999999;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-image: url('assets/background.gif');
+	background-size: cover;
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }
