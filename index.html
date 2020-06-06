@@ -114,7 +114,6 @@
           </button>
         </div>
         <script type="text/javascript">
-
           const deactivateAntiracismOverlay = () => {
             const overlay = document.querySelector('.antiracism-overlay');
             if (overlay) {
@@ -135,11 +134,14 @@
               }
             }
           }
-          const autorun = () => {
+          const antiracismAutorun = () => {
             setupAntiracismOverlay();
             setAntiracismFullHeight();
             window.addEventListener('resize',setFullHeight);
           }
+          if (document.addEventListener) document.addEventListener("DOMContentLoaded", antiracismAutorun, false);
+          else if (document.attachEvent) document.attachEvent("onreadystatechange", antiracismAutorun);
+          else window.onload = antiracismAutorun;
         </script>
     </div>
   
