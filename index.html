@@ -69,12 +69,11 @@
       </button>
 
       <div class="embed__row">
-        <p class="code-description baskerville">If you want to link to this page from social media, please use this URL:</p>
+        <p class="code-description baskerville">If you want to link to this page, please use this URL:</p>
         <div class="embed-text__wrapper">
           <code class="code-to-copy" id="linkUrl">https://anti-racism-resources.netlify.app/</code>
         </div>
-        <div class="copy-button baskerville" id="copyLink">Click here to copy link to clipboard</div>
-        <p class="copied-message small-text hidden baskerville" id="copiedLinkMessage">Embed code copied to clipboard!</p>
+        <button class="copy-button baskerville" id="copyLink">Click here to copy link to clipboard</button>
       </div>
 
       <div class="embed__row">
@@ -126,12 +125,11 @@
           </code>
         </div>
         <button class="copy-button baskerville" id="copyEmbed">Click here to copy code to clipboard</button>
-        <p class="copied-message small-text hidden baskerville" id="copiedCodeMessage">Embed code copied to clipboard!</p>
       </div>
 
       <div class="embed__row">
         <p class="code-description baskerville">This code is open source!</p>
-        <p class="code-description baskerville"><a target="_blank" href="https://github.com/rifkes/black-lives-matter-resource">If you’re a developer, click here to fork it on Github and please feel free to add to it and improve it.</a></p>
+        <p class="code-description baskerville"><a class="github-link" target="_blank" href="https://github.com/rifkes/black-lives-matter-resource">If you’re a developer, click here to fork it on Github and please feel free to add to it and improve it.</a></p>
       </div>
 
     </div>
@@ -141,7 +139,7 @@
     let copiedMessageTimeout;
 
     const hideCopyEmbedNote = () => {
-      document.querySelector('#copiedCodeMessage').classList.add('hidden');
+      document.querySelector('#copyEmbed').innerHTML = 'Click here to copy code to clipboard';
     }
 
     const copyEmbed = () => {
@@ -154,13 +152,13 @@
       document.execCommand('copy');
       newTextarea.parentNode.removeChild(newTextarea);
 
-      document.querySelector('#copiedCodeMessage').classList.remove('hidden');
-      copiedMessageTimeout = setTimeout(hideCopyLinkNote, 3000);
+      document.querySelector('#copyEmbed').innerHTML = 'Copied to clipboard';
+      copiedMessageTimeout = setTimeout(hideCopyEmbedNote, 3000);
       
     }
 
     const hideCopyLinkNote = () => {
-      document.querySelector('#copiedLinkMessage').classList.add('hidden');
+      document.querySelector('#copyLink').innerHTML = 'Click here to copy link to clipboard';
     }
 
     const copyLink = () => {
@@ -173,7 +171,7 @@
       document.execCommand('copy');
       newTextarea.parentNode.removeChild(newTextarea);
 
-      document.querySelector('#copiedLinkMessage').classList.remove('hidden');
+      document.querySelector('#copyLink').innerHTML = 'Copied to clipboard';
       copiedMessageTimeout = setTimeout(hideCopyLinkNote, 3000);
 
     }
@@ -186,6 +184,14 @@
       const copyEmbedButton = document.querySelector('#copyEmbed');
       if (copyEmbedButton) {
         copyEmbedButton.addEventListener('click',copyEmbed);
+      }
+      const linkUrl = document.querySelector('#linkUrl');
+      if (linkUrl) {
+        linkUrl.addEventListener('click',copyLink);
+      }
+      const embedCode = document.querySelector('#embedCode');
+      if (embedCode) {
+        embedCode.addEventListener('click',copyEmbed);
       }
     }
 

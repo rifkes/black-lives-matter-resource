@@ -15,6 +15,11 @@ html, body {
 	display: none;
 }
 
+a, a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
 *::-webkit-scrollbar {
 	display: none;
 }
@@ -189,7 +194,7 @@ p {
 .embed-overlay__close-button {
 	position: fixed;
 	top: 12px;
-	right: 12px;
+	right: 18px;
 	display: block;
 	width: 40px;
 	height: 40px;
@@ -222,52 +227,38 @@ p {
 .embed-text__wrapper {
 	border: 1px solid #ccc;
 	background-color: #eee;
-	padding: 12px;
+	padding: 6px 12px 12px 12px;
 	border-radius: 6px;
 	color: #000;
+	width: 100%;
 	max-height: 120px;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 }
 
+code {
+	width: 100%;
+}
+
 .copy-button {
 	width: 100%;
-	margin-top: 1em;
+	margin-top: 0.5em;
+	font-size: 0.75rem;
 	text-align: left;
 	color: #fff;
 	padding: 0;
 }
 
-.copied-code-message {
-	opacity: 1;
-	transition: opacity 0.4s ease;
-}
-
-.hidden {
-	opacity: 0;
-	pointer-events: none;
-}
-
-.small-text {
-	font-size: 0.75rem;
-}
-
 @media(min-width: 500px) {
 	.embed__row {
-		display: flex;
-		align-items: flex-start;
-	}
-	.embed-text__wrapper {
 		width: 75%;
-	}
-	.copy-button {
-		width: 25%;
 	}
 }
 
 @media(min-width: 768px) {
-	.embed-text__wrapper {
+	.embed__row {
 		width: 50%;
+		margin-bottom: 36px;
 	}
 }
 
