@@ -68,84 +68,119 @@
         <div class="embed-overlay__close-button__inner embed-overlay__close-button__inner--2"></div>
       </button>
 
-      <div class="embed-text__wrapper">
-        <code>
-          <span><</span>iframe src="https://anti-racism-resources.netlify.app/" frameborder="0"><span><</span>/iframe>
-        </code>
-
-        <style type="text/css">
-          .antiracism-overlay {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            padding: 0;
-            z-index: 999;
-            z-index: 999999999;
-          }
-          .antiracism-overlay__close-button {
-            position: fixed;
-            top: 36px;
-            right: 12px;
-            background-color: transparent;
-            border: none;
-            -webkit-appearance: none;
-          }
-          .antiracism-overlay__close-button__inner {
-            width: 40px;
-            height: 0.45px;
-            background-color: #fff;
-          }
-          .antiracism-overlay__close-button__inner--1 {
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-          }
-          .antiracism-overlay__close-button__inner--2 {
-            -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-          }
-        </style>
-        <div class="antiracism-overlay">
-          <iframe src="https://anti-racism-resources.netlify.app/" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-          <button class="antiracism-overlay__close-button">
-            <div class="antiracism-overlay__close-button__inner antiracism-overlay__close-button__inner--1"></div>
-            <div class="antiracism-overlay__close-button__inner antiracism-overlay__close-button__inner--2"></div>
-          </button>
+      <div class="embed__row">
+        <div class="embed-text__wrapper">
+          <code class="code-to-copy" id="linkUrl">https://anti-racism-resources.netlify.app/</code>
         </div>
-        <script type="text/javascript">
-          const deactivateAntiracismOverlay = () => {
-            const overlay = document.querySelector('.antiracism-overlay');
-            if (overlay) {
-              overlay.parentNode.removeChild('overlay-overlay-is-active');
-            }
-          }
-          const setupAntiracismOverlay = () => {
-            const overlayCloseButton = document.querySelector('.antiracism-overlay__close-button');
-            if (overlayCloseButton) {
-              overlayCloseButton.addEventListener('click',deactivateAntiracismOverlay);
-            }
-          }
-          const setAntiracismFullHeight = () => {
-            const fullHeightElements = document.querySelectorAll('.full-height');
-            if (fullHeightElements[0]) {
-              for (let fullHeightElement of fullHeightElements) {
-                fullHeightElement.style.height = window.innerHeight + 'px';
-              }
-            }
-          }
-          const antiracismAutorun = () => {
-            setupAntiracismOverlay();
-            setAntiracismFullHeight();
-            window.addEventListener('resize',setFullHeight);
-          }
-          if (document.addEventListener) document.addEventListener("DOMContentLoaded", antiracismAutorun, false);
-          else if (document.attachEvent) document.attachEvent("onreadystatechange", antiracismAutorun);
-          else window.onload = antiracismAutorun;
-        </script>
+        <div class="copy-button baskerville" id="copyLink">Click here to copy link to clipboard</div>
+        <p class="copied-message small-text hidden baskerville" id="copiedLinkMessage">Embed code copied to clipboard!</p>
+      </div>
+
+      <div class="embed__row">
+        <div class="embed-text__wrapper">
+          <code class="code-to-copy" id="embedCode">
+            <span class="code__span"><</span>style type="text/css"><br><span class="code__span code__span--indent-1">.antiracism-overlay{position:fixed;width:100vw;height:100vh;top:0;left:0;padding:0;z-index:999;z-index:999999999;}.antiracism-overlay__close-button{width:40px;height:40px;position:fixed;top:12px;right:12px;background-color:transparent;border:none;-webkit-appearance:none;}.antiracism-overlay__close-button__inner{width:40px;height:0.45px;background-color:#fff;}.antiracism-overlay__close-button__inner--1{-webkit-transform:rotate(45deg);transform:rotate(45deg);}.antiracism-overlay__close-button__inner--2{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}</span><span class="code__span"><</span>/style>
+            <span class="code__span code__span--indent-0">
+              <span class="code__span"><</span>div class="antiracism-overlay">
+              <span class="code__span"><</span>iframe src="https://anti-racism-resources.netlify.app/" frameborder="0" style="width: 100%; height: 100%;"><span class="code__span"><</span>/iframe>
+                <span class="code__span"><</span>button class="antiracism-overlay__close-button">
+                  <span class="code__span"><</span>div class="antiracism-overlay__close-button__inner antiracism-overlay__close-button__inner--1"><span class="code__span"><</span>/div>
+                  <span class="code__span"><</span>div class="antiracism-overlay__close-button__inner antiracism-overlay__close-button__inner--2"><span class="code__span"><</span>/div>
+                <span class="code__span"><</span>/button>
+              <span class="code__span"><</span>/div>
+            </span>
+            <span class="code__span"><</span>script type="text/javascript">
+              <span class="code__span code__span--indent-0">
+                const deactivateAntiracismOverlay = () => {
+                  const overlay = document.querySelector('.antiracism-overlay');
+                  if (overlay) {
+                    overlay.parentNode.removeChild(overlay);
+                  }
+                }
+                const setupAntiracismOverlay = () => {
+                  const overlayCloseButton = document.querySelector('.antiracism-overlay__close-button');
+                  if (overlayCloseButton) {
+                    overlayCloseButton.addEventListener('click',deactivateAntiracismOverlay);
+                  }
+                }
+                const setAntiracismFullHeight = () => {
+                  const fullHeightElements = document.querySelectorAll('.full-height');
+                  if (fullHeightElements[0]) {
+                    for (let fullHeightElement of fullHeightElements) { 
+                      fullHeightElement.style.height = window.innerHeight + 'px';
+                    }
+                  }
+                }
+                const antiracismAutorun = () => { 
+                  setupAntiracismOverlay();
+                  setAntiracismFullHeight();
+                  window.addEventListener('resize',setFullHeight);
+                }
+                if (document.addEventListener) document.addEventListener("DOMContentLoaded", antiracismAutorun, false);
+                else if (document.attachEvent) document.attachEvent("onreadystatechange", antiracismAutorun);
+                else window.onload = antiracismAutorun;
+              </span>
+            <span class="code__span"><</span>/script>
+          </code>
+        </div>
+        <button class="copy-button baskerville" id="copyEmbed">Click here to copy code to clipboard</button>
+        <p class="copied-message small-text hidden baskerville" id="copiedCodeMessage">Embed code copied to clipboard!</p>
+      </div>
+
     </div>
   
   <script type="text/javascript">
+
+    let copiedMessageTimeout;
+
+    const hideCopyEmbedNote = () => {
+      document.querySelector('#copiedCodeMessage').classList.add('hidden');
+    }
+
+    const copyEmbed = () => {
+
+      let newTextarea = document.createElement('TEXTAREA');
+      newTextarea.value = document.querySelector('#embedCode').textContent;
+      document.body.append(newTextarea);
+      newTextarea.select();
+      newTextarea.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      newTextarea.parentNode.removeChild(newTextarea);
+
+      document.querySelector('#copiedCodeMessage').classList.remove('hidden');
+      copiedMessageTimeout = setTimeout(hideCopyLinkNote, 3000);
+      
+    }
+
+    const hideCopyLinkNote = () => {
+      document.querySelector('#copiedLinkMessage').classList.add('hidden');
+    }
+
+    const copyLink = () => {
+
+      let newTextarea = document.createElement('TEXTAREA');
+      newTextarea.value = document.querySelector('#linkUrl').textContent;
+      document.body.append(newTextarea);
+      newTextarea.select();
+      newTextarea.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      newTextarea.parentNode.removeChild(newTextarea);
+
+      document.querySelector('#copiedLinkMessage').classList.remove('hidden');
+      copiedMessageTimeout = setTimeout(hideCopyLinkNote, 3000);
+
+    }
+
+    const setupCopying = () => {
+      const copyLinkButton = document.querySelector('#copyLink');
+      if (copyLinkButton) {
+        copyLinkButton.addEventListener('click',copyLink);
+      }
+      const copyEmbedButton = document.querySelector('#copyEmbed');
+      if (copyEmbedButton) {
+        copyEmbedButton.addEventListener('click',copyEmbed);
+      }
+    }
 
     const deactivateEmbedOverlay = () => {
       document.body.classList.remove('embed-overlay-is-active');
@@ -178,6 +213,7 @@
     const autorun = () => {
       setupEmbed();
       setFullHeight();
+      setupCopying();
       window.addEventListener('resize',setFullHeight);
     }
 
