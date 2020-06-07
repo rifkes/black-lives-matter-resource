@@ -32,11 +32,11 @@
 
     <div class="content__wrapper full-height">
       <div class="content__inner">
-        <p class="intro baskerville">
-          We ask you to join us in the ongoing fight against racial injustice and inequality by speaking up and taking action.
+        <p class="intro intro--0 baskerville">
+          Join us in the ongoing fight against racial injustice and inequality by speaking up and taking action.
         </p>
         <div class="content__middle-section">
-          <p class="intro baskerville">
+          <p class="intro intro--1 baskerville">
             Things You Can Do To Support:
           </p>
           <ol class="list--action-points cormorant">
@@ -57,13 +57,13 @@
             </li>
           </ol>
         </div>
-        <p class="footnote baskerville">* This landing page is open-source and can be added to your own website. Note that the list above links out to other people’s work and resources.</p>
+        <p class="footnote baskerville">* This landing page is open-source and can be added to your own website. Click here for instructions. Please note that the links are the work and resources of other people.</p>
       </div>
     </div>
 
     <div class="embed-overlay full-height">
 
-      <button class="embed-overlay__close-button baskerville">Close</button>
+      <button class="embed-overlay__close-button baskerville">back</button>
 
       <div class="embed__row">
         <p class="code-description baskerville">To link to this page, please use this URL:</p>
@@ -77,13 +77,54 @@
         <p class="code-description baskerville">To embed this on your own website, copy and paste this code just below the first <span><</span>body> tag of your site.</p>
         <div class="embed-text__wrapper">
           <code class="code-to-copy" id="embedCode">
-            <span class="code__span"><</span>style type="text/css"><br><span class="code__span code__span--indent-1">.antiracism-overlay{position:fixed;width:100vw;height:100vh;top:0;left:0;padding:0;z-index:999;z-index:999999999;}.antiracism-overlay__close-button{width:40px;height:40px;position:fixed;top:12px;right:12px;background-color:transparent;border:none;-webkit-appearance:none;}.antiracism-overlay__close-button__inner{width:40px;height:0.45px;background-color:#fff;}.antiracism-overlay__close-button__inner--1{-webkit-transform:rotate(45deg);transform:rotate(45deg);}.antiracism-overlay__close-button__inner--2{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}.antiracism-iframe{height:100%;width:100%;}.antiracism-overlay__close-button:focus{outline:none;}.antiracism-overlay__close-button{cursor:pointer;right:12px;}.antiracism-overlay{overflow-y:scroll;-webkit-overflow-scrolling:touch;}</span><span class="code__span"><</span>/style>
+            <span class="code__span"><</span>style type="text/css"><br><span class="code__span code__span--indent-1">
+              .antiracism-overlay{
+                position:fixed;
+                width:100vw;
+                height:100vh;
+                top:0;
+                left:0;
+                padding:0;
+                z-index:999;
+                z-index:999999999; 
+              }
+              .antiracism-overlay__close-button{
+                max-width:75vw;
+                width: calc(100% - 40px);
+                background: url('assets/continue-02.svg');
+                opacity: 0.8;
+                background-size: contain;
+                background-position: center right;
+                background-repeat: no-repeat;
+                height:24px;
+                position:fixed;
+                top:18px;
+                right:12px;
+                background-color:transparent;
+                border:none;
+                -webkit-appearance:none; 
+              }
+              .antiracism-iframe{
+                height:100%;
+                width:100%; 
+              }
+              .antiracism-overlay__close-button:focus{
+                outline:none; 
+              }
+              .antiracism-overlay__close-button{
+                cursor:pointer;
+                right:12px; 
+              }
+              .antiracism-overlay{
+                overflow-y:scroll;
+                -webkit-overflow-scrolling:touch; 
+              }
+            </span><span class="code__span"><</span>/style>
             <span class="code__span code__span--indent-0">
               <span class="code__span"><</span>div class="antiracism-overlay">
               <span class="code__span"><</span>iframe class="antiracism-iframe full-height" src="https://anti-racism-resources.netlify.app/" frameborder="0" style="width: 100%; height: 100%;"><span class="code__span"><</span>/iframe>
-                <span class="code__span"><</span>button class="antiracism-overlay__close-button">
-                  <span class="code__span"><</span>div class="antiracism-overlay__close-button__inner antiracism-overlay__close-button__inner--1"><span class="code__span"><</span>/div>
-                  <span class="code__span"><</span>div class="antiracism-overlay__close-button__inner antiracism-overlay__close-button__inner--2"><span class="code__span"><</span>/div>
+                <span class="code__span"><</span>button class="antiracism-overlay__close-button cormorant">
+                  Continue to site &rarr;
                 <span class="code__span"><</span>/button>
               <span class="code__span"><</span>/div>
             </span>
@@ -127,6 +168,10 @@
       <div class="embed__row">
         <p class="code-description baskerville">This code is open source!</p>
         <p class="code-description baskerville"><a class="github-link" target="_blank" href="https://github.com/rifkes/black-lives-matter-resource">If you’re a developer, click here to fork it on Github and please feel free to add to it and improve it.</a></p>
+      </div>
+
+      <div class="embed__row">
+        <p class="code-description baskerville disclaimer small-text">DISCLAIMER: Please note that the links on this site are the work and resources of other people.</p>
       </div>
 
     </div>
@@ -204,6 +249,10 @@
       const embedButton = document.querySelector('.embed__button');
       if (embedButton) {
         embedButton.addEventListener('click',activateEmbedOverlay);
+      }
+      const footnote = document.querySelector('.footnote');
+      if (footnote) {
+        footnote.addEventListener('click',activateEmbedOverlay);
       }
       const embedCloseButton = document.querySelector('.embed-overlay__close-button');
       if (embedCloseButton) {

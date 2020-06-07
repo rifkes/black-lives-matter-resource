@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+
+
+
+
+
+            
+            <style type="text/css">
+              .antiracism-overlay{
+                position:fixed;
+                width:100vw;
+                height:100vh;
+                top:0;
+                left:0;
+                padding:0;
+                z-index:999;
+                z-index:999999999; 
+              }
+              .antiracism-overlay__close-button{
+                max-width:75vw;
+                width: calc(100% - 40px);
+                background: url('assets/continue-02.svg');
+                opacity: 0.8;
+                background-size: contain;
+                background-position: center right;
+                background-repeat: no-repeat;
+                height:24px;
+                position:fixed;
+                top:18px;
+                right:12px;
+                background-color:transparent;
+                border:none;
+                -webkit-appearance:none; 
+              }
+              .antiracism-iframe{
+                height:100%;
+                width:100%; 
+              }
+              .antiracism-overlay__close-button:focus{
+                outline:none; 
+              }
+              .antiracism-overlay__close-button{
+                cursor:pointer;
+                right:12px; 
+              }
+              .antiracism-overlay{
+                overflow-y:scroll;
+                -webkit-overflow-scrolling:touch; 
+              }
+            </style>
+            
+              <div class="antiracism-overlay">
+            <!--   <iframe class="antiracism-iframe full-height" src="https://anti-racism-resources.netlify.app/" frameborder="0" style="width: 100%; height: 100%;"></iframe> -->
+              <iframe class="antiracism-iframe full-height" src="index.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+                <button class="antiracism-overlay__close-button"></button>
+              </div>
+            
+            <script type="text/javascript">
+              
+                const deactivateAntiracismOverlay = () => {
+                  const overlay = document.querySelector('.antiracism-overlay');
+                  if (overlay) {
+                    overlay.parentNode.removeChild(overlay);
+                  }
+                }
+                const setupAntiracismOverlay = () => {
+                  const overlayCloseButton = document.querySelector('.antiracism-overlay__close-button');
+                  if (overlayCloseButton) {
+                    overlayCloseButton.addEventListener('click',deactivateAntiracismOverlay);
+                  }
+                }
+                const setAntiracismFullHeight = () => {
+                  const fullHeightElements = document.querySelectorAll('.full-height');
+                  if (fullHeightElements[0]) {
+                    for (let fullHeightElement of fullHeightElements) { 
+                      fullHeightElement.style.height = window.innerHeight + 'px';
+                    }
+                  }
+                }
+                const antiracismAutorun = () => { 
+                  setupAntiracismOverlay();
+                  setAntiracismFullHeight();
+                  window.addEventListener('resize',setAntiracismFullHeight);
+                }
+                if (document.addEventListener) document.addEventListener("DOMContentLoaded", antiracismAutorun, false);
+                else if (document.attachEvent) document.attachEvent("onreadystatechange", antiracismAutorun);
+                else window.onload = antiracismAutorun;
+              
+            </script>
+          
+  
+
+
+
+
+  </body>
+</html>

@@ -124,8 +124,11 @@ p {
 }
 
 .intro {
-	margin-top: 50px;
-	font-size: 1.25rem;
+	font-size: 1.15rem;
+}
+
+.intro--0 {
+	margin-top: 90px;
 }
 
 .list--action-points {
@@ -148,11 +151,15 @@ p {
 }
 
 .action-point {
+	white-space: nowrap;
+	user-select: none;
 	text-transform: uppercase;
 	margin-top: 0;
 	margin-bottom: 0;
 	line-height: 1em;
 	cursor: pointer;
+	-webkit-transition: -webkit-transform 0.4s ease;
+	transition: transform 0.4s ease;
 }
 
 .action-point__link,
@@ -162,11 +169,17 @@ p {
 	display: inline-block;
 }
 
+.action-point:hover {
+	-webkit-transform: translateX(-0.25em);
+	transform: translateX(-0.25em);
+}
+
 .footnote {
 	position: absolute;
 	bottom: 0;
 	padding: 12px;
 	font-size: 0.85rem;
+	cursor: pointer;
 }
 
 .content__middle-section {
