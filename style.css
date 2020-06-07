@@ -125,7 +125,7 @@ p {
 
 .intro {
 	margin-top: 50px;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 .list--action-points {
@@ -135,7 +135,14 @@ p {
 	font-size: 2.5rem;
 	width: 100%;
 	list-style-position: inside;
-	@media(min-width: 400px) {
+}
+@media(min-width: 400px) {
+	.list--action-points {
+		font-size: 4rem;
+	}
+}
+@media(min-width: 768px) {
+	.list--action-points {
 		font-size: 3rem;
 	}
 }
@@ -158,6 +165,7 @@ p {
 .footnote {
 	position: absolute;
 	bottom: 0;
+	font-size: 0.75rem;
 	padding: 12px;
 }
 
