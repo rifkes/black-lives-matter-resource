@@ -211,6 +211,8 @@ p {
 	right: 12px;
 	display: block;
 	width: auto;
+	font-size: 1rem;
+	color: #fff;
 	background-color: transparent;
 	border: none;
 	-webkit-appearance: none;
