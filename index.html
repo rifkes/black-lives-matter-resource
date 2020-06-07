@@ -112,7 +112,7 @@
                 const antiracismAutorun = () => { 
                   setupAntiracismOverlay();
                   setAntiracismFullHeight();
-                  window.addEventListener('resize',setFullHeight);
+                  window.addEventListener('resize',setAntiracismFullHeight);
                 }
                 if (document.addEventListener) document.addEventListener("DOMContentLoaded", antiracismAutorun, false);
                 else if (document.attachEvent) document.attachEvent("onreadystatechange", antiracismAutorun);
