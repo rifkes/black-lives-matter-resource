@@ -207,11 +207,10 @@ p {
 
 .embed-overlay__close-button {
 	position: fixed;
-	top: 12px;
-	right: 18px;
+	bottom: 12px;
+	right: 12px;
 	display: block;
-	width: 40px;
-	height: 40px;
+	width: auto;
 	background-color: transparent;
 	border: none;
 	-webkit-appearance: none;
